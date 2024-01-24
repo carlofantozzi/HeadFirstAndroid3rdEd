@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:src="@drawable/duck"
-        android:contentDescription="Duck image" />
+        android:contentDescription="@string/duck_image" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="It's a duck!" />
+        android:text="@string/is_duck" />
 </FrameLayout>

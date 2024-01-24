@@ -1,10 +1,10 @@
 package com.hfad.beeradviser
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun getBeers(color: String): List<String> {
+    private fun getBeers(color: String): List<String> {
         return when (color) {
             "Light" -> listOf("Jail Pale Ale", "Lager Lite")
             "Amber" -> listOf("Jack Amber", "Red Moose")

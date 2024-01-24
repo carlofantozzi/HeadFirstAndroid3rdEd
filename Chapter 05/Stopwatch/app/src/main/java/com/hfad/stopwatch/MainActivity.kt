@@ -1,28 +1,28 @@
 package com.hfad.stopwatch
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.Chronometer
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var stopwatch: Chronometer  //The stopwatch
-    var running = false  //Is the stopwatch running?
-    var offset: Long = 0  //The base offset for the stopwatch
+    private lateinit var stopwatch: Chronometer  //The stopwatch
+    private var running = false  //Is the stopwatch running?
+    private var offset: Long = 0  //The base offset for the stopwatch
 
     //Add key Strings for use with the Bundle
-    val OFFSET_KEY = "offset"
-    val RUNNING_KEY = "running"
-    val BASE_KEY = "base"
+    private val OFFSET_KEY = "offset"
+    private val RUNNING_KEY = "running"
+    private val BASE_KEY = "base"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         //Get a reference to the stopwatch
-        stopwatch = findViewById<Chronometer>(R.id.stopwatch)
+        stopwatch = findViewById(R.id.stopwatch)
 
         //Restore the previous state
         if (savedInstanceState != null) {
@@ -87,12 +87,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Update the stopwatch base time, allowing for any offset
-    fun setBaseTime() {
+    private fun setBaseTime() {
         stopwatch.base = SystemClock.elapsedRealtime() - offset
     }
 
     //Record the offset
-    fun saveOffset() {
+    private fun saveOffset() {
         offset = SystemClock.elapsedRealtime() - stopwatch.base
     }
 }
