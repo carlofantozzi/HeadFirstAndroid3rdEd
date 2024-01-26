@@ -7,7 +7,6 @@ import android.widget.Chronometer
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var stopwatch: Chronometer  //The stopwatch
     private var running = false  //Is the stopwatch running?
     private var offset: Long = 0  //The base offset for the stopwatch

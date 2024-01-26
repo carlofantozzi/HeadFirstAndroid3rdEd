@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Bits and Pizzas</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ask_pizza_type">Which type of pizza would you like?</string>
+    <string name="diavolo">Diavolo</string>
+    <string name="funghi">Funghi</string>
+    <string name="ask_pizza_extras">Please choose any extras:</string>
+    <string name="parmesan">Parmesan</string>
+    <string name="chili_oil">Chili oil</string>
+    <string name="no_pizza_selected">You need to choose a pizza type</string>
+    <string name="diavolo_pizza">Diavolo</string>
+    <string name="funghi_pizza">Funghi</string>
+    <string name="extra_parmesan">extra Parmesan</string>
+    <string name="extra_chili_oil">extra Chili oil</string>
 </resources>

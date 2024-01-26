@@ -1,19 +1,19 @@
 package com.hfad.stopwatch
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import androidx.appcompat.app.AppCompatActivity
 import com.hfad.stopwatch.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var running = false  //Is the stopwatch running?
-    var offset: Long = 0  //The base offset for the stopwatch
+    private var running = false  //Is the stopwatch running?
+    private var offset: Long = 0  //The base offset for the stopwatch
 
     //Add key Strings for use with the Bundle
-    val OFFSET_KEY = "offset"
-    val RUNNING_KEY = "running"
-    val BASE_KEY = "base"
+    private val OFFSET_KEY = "offset"
+    private val RUNNING_KEY = "running"
+    private val BASE_KEY = "base"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -81,12 +81,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Update the stopwatch base time, allowing for any offset
-    fun setBaseTime() {
+    private fun setBaseTime() {
         binding.stopwatch.base = SystemClock.elapsedRealtime() - offset
     }
 
     //Record the offset
-    fun saveOffset() {
+    private fun saveOffset() {
         offset = SystemClock.elapsedRealtime() - binding.stopwatch.base
     }
 }

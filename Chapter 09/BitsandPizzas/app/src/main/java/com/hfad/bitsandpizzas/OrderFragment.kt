@@ -1,16 +1,16 @@
 package com.hfad.bitsandpizzas
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.appbar.MaterialToolbar
 import android.widget.RadioGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.chip.Chip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 
 class OrderFragment : Fragment() {
@@ -26,18 +26,17 @@ class OrderFragment : Fragment() {
         fab.setOnClickListener {
             val pizzaGroup = view.findViewById<RadioGroup>(R.id.pizza_group)
             val pizzaType = pizzaGroup.checkedRadioButtonId
-            if (pizzaType == -1) {
-                val text = "You need to choose a pizza type"
-                Toast.makeText(activity, text, Toast.LENGTH_LONG).show()
-            } else {
+            if (pizzaType == -1)
+                Toast.makeText(activity, R.string.no_pizza_selected, Toast.LENGTH_LONG).show()
+            else {
                 var text = (when (pizzaType) {
-                    R.id.radio_diavolo -> "Diavolo pizza"
-                    else -> "Funghi pizza"
+                    R.id.radio_diavolo -> resources.getString(R.string.diavolo_pizza)
+                    else -> resources.getString(R.string.funghi_pizza)
                 })
-                val parmesan = view.findViewById<Chip>(R.id.parmesan)
-                text += if (parmesan.isChecked) ", extra parmesan" else ""
-                val ChiliOil = view.findViewById<Chip>(R.id.chili_oil)
-                text += if (ChiliOil.isChecked) ", extra Chili oil" else ""
+                if (view.findViewById<Chip>(R.id.parmesan).isChecked)
+                    text += ", ${resources.getString(R.string.extra_parmesan)}"
+                if (view.findViewById<Chip>(R.id.chili_oil).isChecked)
+                    text += ", ${resources.getString(R.string.extra_chili_oil)}"
                 Snackbar.make(fab, text, Snackbar.LENGTH_LONG).show()
             }
         }

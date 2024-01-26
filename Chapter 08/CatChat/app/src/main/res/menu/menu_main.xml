@@ -4,20 +4,20 @@
         <item
             android:id="@+id/inboxFragment"
             android:icon="@android:drawable/ic_dialog_email"
-            android:title="Inbox" />
+            android:title="@string/inbox" />
         <item
             android:id="@+id/sentItemsFragment"
             android:icon="@android:drawable/ic_menu_send"
-            android:title="Sent Items" />
+            android:title="@string/sent_items" />
     </group>
 
-    <item android:title="Support">
+    <item android:title="@string/support">
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/helpFragment"
                     android:icon="@android:drawable/ic_menu_help"
-                    android:title="Help" />
+                    android:title="@string/help" />
             </group>
         </menu>
     </item>
