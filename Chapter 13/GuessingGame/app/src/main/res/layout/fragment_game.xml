@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16sp"
-            android:hint="Guess a letter"
+            android:hint="@string/guess_letter"
             android:inputType="text"
             android:maxLength="1" />
 
@@ -53,14 +53,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Guess!"/>
+            android:text="@string/guess"/>
 
         <Button
             android:id="@+id/finish_game_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Finish Game"
+            android:text="@string/finish_game"
             android:onClick="@{() -> gameViewModel.finishGame()}" />
     </LinearLayout>
 </layout>

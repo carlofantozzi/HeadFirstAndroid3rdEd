@@ -1,8 +1,8 @@
 package com.hfad.guessinggame
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
     private val words = listOf("Android", "Activity", "Fragment")

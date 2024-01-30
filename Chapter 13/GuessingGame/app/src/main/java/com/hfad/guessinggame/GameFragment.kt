@@ -1,19 +1,19 @@
 package com.hfad.guessinggame
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.hfad.guessinggame.databinding.FragmentGameBinding
-import androidx.navigation.findNavController
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.hfad.guessinggame.databinding.FragmentGameBinding
 
 class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
-    lateinit var viewModel: GameViewModel
+    private lateinit var viewModel: GameViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -33,7 +33,7 @@ class GameFragment : Fragment() {
             }
         })
 
-        binding.guessButton.setOnClickListener() {
+        binding.guessButton.setOnClickListener {
             viewModel.makeGuess(binding.guess.text.toString().uppercase())
             binding.guess.text = null
         }

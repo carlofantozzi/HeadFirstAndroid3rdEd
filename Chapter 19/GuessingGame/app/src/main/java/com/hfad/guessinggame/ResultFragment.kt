@@ -1,12 +1,9 @@
 package com.hfad.guessinggame
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import androidx.lifecycle.ViewModelProvider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -19,10 +16,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.res.stringResource
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 
 class ResultFragment : Fragment() {
-    lateinit var viewModel: ResultViewModel
-    lateinit var viewModelFactory: ResultViewModelFactory
+    private lateinit var viewModel: ResultViewModel
+    private lateinit var viewModelFactory: ResultViewModelFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -53,7 +54,7 @@ fun ResultText(result: String) {
 @Composable
 fun NewGameButton(clicked: () -> Unit) {
     Button(onClick = clicked) {
-        Text("Start New Game")
+        Text(stringResource(R.string.start_new_game))
     }
 }
 

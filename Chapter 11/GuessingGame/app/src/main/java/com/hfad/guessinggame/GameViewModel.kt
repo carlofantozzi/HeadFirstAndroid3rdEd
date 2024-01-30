@@ -3,10 +3,10 @@ package com.hfad.guessinggame
 import androidx.lifecycle.ViewModel
 
 class GameViewModel : ViewModel() {
-    val words = listOf("Android", "Activity", "Fragment")
-    val secretWord = words.random().uppercase()
+    private val words = listOf("Android", "Activity", "Fragment")
+    private val secretWord = words.random().uppercase()
     var secretWordDisplay = ""
-    var correctGuesses = ""
+    private var correctGuesses = ""
     var incorrectGuesses = ""
     var livesLeft = 8
 
@@ -14,7 +14,7 @@ class GameViewModel : ViewModel() {
         secretWordDisplay = deriveSecretWordDisplay()
     }
 
-    fun deriveSecretWordDisplay() : String {
+    private fun deriveSecretWordDisplay() : String {
         var display = ""
         secretWord.forEach {
             display += checkLetter(it.toString())
@@ -22,7 +22,7 @@ class GameViewModel : ViewModel() {
         return display
     }
 
-    fun checkLetter(str: String) = when (correctGuesses.contains(str)) {
+    private fun checkLetter(str: String) = when (correctGuesses.contains(str)) {
         true -> str
         false -> "_"
     }
