@@ -13,7 +13,8 @@ class TaskItemAdapter : ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(Ta
         val item = getItem(position)
         holder.bind(item)
     }
-    class TaskItemViewHolder(val binding: TaskItemBinding)
+
+    class TaskItemViewHolder(private val binding: TaskItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun inflateFrom(parent: ViewGroup): TaskItemViewHolder {

@@ -24,6 +24,6 @@
             android:textSize="16sp"
             android:padding="8dp"
             android:clickable="false"
-            android:text="Done?" />
+            android:text="@string/done_question" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

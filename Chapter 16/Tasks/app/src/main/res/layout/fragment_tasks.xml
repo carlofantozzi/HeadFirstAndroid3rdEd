@@ -18,14 +18,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Enter a task name"
+            android:hint="@string/enter_task_name"
             android:text="@={viewModel.newTaskName}" />
         <Button
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Save Task"
+            android:text="@string/save_task"
             android:onClick="@{() -> viewModel.addTask()}" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tasks_list"

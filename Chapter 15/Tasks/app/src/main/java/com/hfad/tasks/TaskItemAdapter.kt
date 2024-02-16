@@ -20,6 +20,7 @@ class TaskItemAdapter : RecyclerView.Adapter<TaskItemAdapter.TaskItemViewHolder>
         val item = data[position]
         holder.bind(item)
     }
+
     class TaskItemViewHolder(val rootView: CardView)
         : RecyclerView.ViewHolder(rootView) {
         val taskName = rootView.findViewById<TextView>(R.id.task_name)

@@ -31,14 +31,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Update Task"
+            android:text="@string/update_task"
             android:onClick="@{() -> viewModel.updateTask()}" />
         <Button
             android:id="@+id/delete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Delete Task"
+            android:text="@string/delete_task"
             android:onClick="@{() -> viewModel.deleteTask()}" />
     </LinearLayout>
 </layout>

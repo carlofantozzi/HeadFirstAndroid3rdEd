@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.hfad.tasks.databinding.TaskItemBinding
 
-class TaskItemAdapter(val clickListener: (taskId: Long) -> Unit)
+class TaskItemAdapter(private val clickListener: (taskId: Long) -> Unit)
     : ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
             : TaskItemViewHolder = TaskItemViewHolder.inflateFrom(parent)
@@ -15,7 +15,7 @@ class TaskItemAdapter(val clickListener: (taskId: Long) -> Unit)
         holder.bind(item, clickListener)
     }
 
-    class TaskItemViewHolder(val binding: TaskItemBinding)
+    class TaskItemViewHolder(private val binding: TaskItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
         companion object {
             fun inflateFrom(parent: ViewGroup): TaskItemViewHolder {
